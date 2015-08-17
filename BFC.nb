@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     30522,        897]
-NotebookOptionsPosition[     27269,        783]
-NotebookOutlinePosition[     27633,        799]
-CellTagsIndexPosition[     27590,        796]
+NotebookDataLength[     41749,       1197]
+NotebookOptionsPosition[     37918,       1064]
+NotebookOutlinePosition[     38520,       1088]
+CellTagsIndexPosition[     38434,       1083]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -47,11 +47,15 @@ Cell["\<\
 Cell["\<\
 CVI:
 CNS3 (mstPi2rkS[3] @ Cluster+Distance_Operations.txt)
-CNS4 (mstPi2rkS[4] @ Cluster+Distance_Operations.txt)\
+CNS4 (mstPi2rkS[4] @ Cluster+Distance_Operations.txt)
+Example - \
+/Users/kouamano/gitsrc/ClusteringAdequation/ClusterValidityIndices_Sriparna_\
+Exam(calc-index).nb\
 \>", "Text",
  CellChangeTimes->{{3.647831189447205*^9, 3.6478312112549267`*^9}, {
-  3.647831373412978*^9, 3.64783137505095*^9}, {3.647831493272279*^9, 
-  3.6478315353813562`*^9}}],
+   3.647831373412978*^9, 3.64783137505095*^9}, {3.647831493272279*^9, 
+   3.6478315353813562`*^9}, {3.648789551303876*^9, 3.6487895607951937`*^9}, 
+   3.648790175833391*^9, {3.648790232952848*^9, 3.6487902484976263`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -777,7 +781,284 @@ Cell[":CVI\:306e\:5165\:529b\:5f62\:5f0f\:306b\:5909\:63db:", "Text",
  CellChangeTimes->{{3.647831556972373*^9, 3.647831583254697*^9}}],
 
 Cell[":CVI\:8a55\:4fa1:", "Text",
- CellChangeTimes->{{3.647831556972373*^9, 3.647831593848914*^9}}]
+ CellChangeTimes->{{3.647831556972373*^9, 3.647831593848914*^9}}],
+
+Cell["\<\
+::\:30d7\:30ed\:30b0\:30e9\:30e0:
+/home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Cluster+Distance_Operations.txt\
+\>", "Text",
+ CellChangeTimes->{{3.648789392696817*^9, 3.6487894535888357`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Get", "[", 
+  "\"\</Users/kouamano/gitsrc/MATH_SCRIPT/SCRIPTS/Cluster+Distance_Operations.\
+txt\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.64878941915935*^9, 3.64878942320317*^9}, {
+  3.6487894606293*^9, 3.6487894714430532`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "mstPi2rkS"}]], "Input",
+ CellChangeTimes->{{3.648789477927692*^9, 3.648789494419372*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Global`mstPi2rkS", "Print", "PrintUsage",
+ CellChangeTimes->{3.648789495197259*^9},
+ CellTags->"Info3648821895-6722051"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{
+          RowBox[{"mstPi2rkS", "[", "1", "]"}], "[", 
+          RowBox[{"mst_List", ",", "mstm_", ",", "cls_"}], "]"}], ":=", 
+         RowBox[{"Module", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+            "k", ",", "numMems", ",", "mstmaxs", ",", "MSTmmax", ",", 
+             "MSTmmean"}], "}"}], ",", 
+           RowBox[{
+            RowBox[{"k", "=", 
+             RowBox[{"Length", "[", "cls", "]"}]}], ";", 
+            RowBox[{"numMems", "=", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"Length", "[", "#1", "]"}], "&"}], ")"}], "/@", 
+              "cls"}]}], ";", 
+            RowBox[{"mstmaxs", "=", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"Max", "[", "#1", "]"}], "&"}], ")"}], "/@", 
+              RowBox[{"Map", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"#1", "\[LeftDoubleBracket]", 
+                  RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "&"}], ",", 
+                "mst", ",", 
+                RowBox[{"{", "2", "}"}]}], "]"}]}]}], ";", 
+            RowBox[{"MSTmmax", "=", 
+             RowBox[{"Max", "[", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"#1", "\[LeftDoubleBracket]", 
+                  RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "&"}], ")"}],
+                "/@", "mstm"}], "]"}]}], ";", 
+            RowBox[{"MSTmmean", "=", 
+             RowBox[{"Mean", "[", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"#1", "\[LeftDoubleBracket]", 
+                  RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "&"}], ")"}],
+                "/@", "mstm"}], "]"}]}], ";", 
+            RowBox[{"k", " ", 
+             SuperscriptBox[
+              RowBox[{"Inner", "[", 
+               RowBox[{"Power", ",", "numMems", ",", 
+                FractionBox["mstmaxs", "MSTmmean"], ",", "Times"}], "]"}], 
+              RowBox[{"1", "/", "k"}]]}]}]}], "]"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{
+          RowBox[{"mstPi2rkS", "[", "2", "]"}], "[", 
+          RowBox[{"mst_List", ",", "mstm_", ",", "cls_"}], "]"}], ":=", 
+         RowBox[{"Module", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+            "k", ",", "numMems", ",", "mstmaxs", ",", "mstmeans", ",", 
+             "MSTmmax", ",", "mstmaxsS"}], "}"}], ",", 
+           RowBox[{
+            RowBox[{"k", "=", 
+             RowBox[{"Length", "[", "cls", "]"}]}], ";", 
+            RowBox[{"numMems", "=", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"Length", "[", "#1", "]"}], "&"}], ")"}], "/@", 
+              "cls"}]}], ";", 
+            RowBox[{"mstmaxs", "=", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"Max", "[", "#1", "]"}], "&"}], ")"}], "/@", 
+              RowBox[{"Map", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"#1", "\[LeftDoubleBracket]", 
+                  RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "&"}], ",", 
+                "mst", ",", 
+                RowBox[{"{", "2", "}"}]}], "]"}]}]}], ";", 
+            RowBox[{"mstmeans", "=", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"Mean", "[", "#1", "]"}], "&"}], ")"}], "/@", 
+              RowBox[{"Map", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"#1", "\[LeftDoubleBracket]", 
+                  RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "&"}], ",", 
+                "mst", ",", 
+                RowBox[{"{", "2", "}"}]}], "]"}]}]}], ";", 
+            RowBox[{"MSTmmax", "=", 
+             RowBox[{"Max", "[", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"#1", "\[LeftDoubleBracket]", 
+                  RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "&"}], ")"}],
+                "/@", "mstm"}], "]"}]}], ";", 
+            RowBox[{"mstmaxsS", "=", 
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"If", "[", 
+                   RowBox[{
+                    RowBox[{"#1", "\[Equal]", "0"}], ",", "0", ",", 
+                    FractionBox["#1", "#2"]}], "]"}], "&"}], ")"}], "[", 
+                RowBox[{
+                 RowBox[{
+                 "mstmaxs", "\[LeftDoubleBracket]", "i", 
+                  "\[RightDoubleBracket]"}], ",", 
+                 RowBox[{
+                 "mstmeans", "\[LeftDoubleBracket]", "i", 
+                  "\[RightDoubleBracket]"}]}], "]"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", 
+                 RowBox[{"Length", "[", "mstmaxs", "]"}]}], "}"}]}], "]"}]}], 
+            ";", 
+            RowBox[{"k", " ", 
+             SuperscriptBox[
+              RowBox[{"Inner", "[", 
+               RowBox[{
+               "Power", ",", "numMems", ",", "mstmaxsS", ",", "Times"}], 
+               "]"}], 
+              RowBox[{"1", "/", "k"}]]}]}]}], "]"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{
+          RowBox[{"mstPi2rkS", "[", "3", "]"}], "[", 
+          RowBox[{"mst_List", ",", "mstm_", ",", "cls_", ",", "totalR_"}], 
+          "]"}], ":=", 
+         RowBox[{"Module", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"k", ",", "numMems", ",", "mstmaxs", ",", "MSTmmax"}], 
+            "}"}], ",", 
+           RowBox[{
+            RowBox[{"k", "=", 
+             RowBox[{"Length", "[", "cls", "]"}]}], ";", 
+            RowBox[{"numMems", "=", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"Length", "[", "#1", "]"}], "&"}], ")"}], "/@", 
+              "cls"}]}], ";", 
+            RowBox[{"mstmaxs", "=", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"Max", "[", "#1", "]"}], "&"}], ")"}], "/@", 
+              RowBox[{"Map", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"#1", "\[LeftDoubleBracket]", 
+                  RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "&"}], ",", 
+                "mst", ",", 
+                RowBox[{"{", "2", "}"}]}], "]"}]}]}], ";", 
+            RowBox[{"MSTmmax", "=", 
+             RowBox[{"Max", "[", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"#1", "\[LeftDoubleBracket]", 
+                  RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "&"}], ")"}],
+                "/@", "mstm"}], "]"}]}], ";", 
+            RowBox[{"k", " ", 
+             SuperscriptBox[
+              RowBox[{"Inner", "[", 
+               RowBox[{"Power", ",", "numMems", ",", 
+                FractionBox["mstmaxs", "totalR"], ",", "Times"}], "]"}], 
+              RowBox[{"1", "/", "k"}]]}]}]}], "]"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{
+          RowBox[{"mstPi2rkS", "[", "4", "]"}], "[", 
+          RowBox[{"mst_List", ",", "mstm_", ",", "cls_", ",", "clRs_"}], 
+          "]"}], ":=", 
+         RowBox[{"Module", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"k", ",", "numMems", ",", "mstmaxs", ",", "MSTmmax"}], 
+            "}"}], ",", 
+           RowBox[{
+            RowBox[{"k", "=", 
+             RowBox[{"Length", "[", "cls", "]"}]}], ";", 
+            RowBox[{"numMems", "=", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"Length", "[", "#1", "]"}], "&"}], ")"}], "/@", 
+              "cls"}]}], ";", 
+            RowBox[{"mstmaxs", "=", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"Max", "[", "#1", "]"}], "&"}], ")"}], "/@", 
+              RowBox[{"Map", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"#1", "\[LeftDoubleBracket]", 
+                  RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "&"}], ",", 
+                "mst", ",", 
+                RowBox[{"{", "2", "}"}]}], "]"}]}]}], ";", 
+            RowBox[{"MSTmmax", "=", 
+             RowBox[{"Max", "[", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"#1", "\[LeftDoubleBracket]", 
+                  RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "&"}], ")"}],
+                "/@", "mstm"}], "]"}]}], ";", 
+            RowBox[{"k", " ", 
+             SuperscriptBox[
+              RowBox[{"Inner", "[", 
+               RowBox[{"Power", ",", "numMems", ",", 
+                FractionBox["mstmaxs", "clRs"], ",", "Times"}], "]"}], 
+              RowBox[{"1", "/", "k"}]]}]}]}], "]"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[$CellContext`mstPi2rkS],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.648789495219964*^9},
+ CellTags->"Info3648821895-6722051"]
+}, Open  ]]
+}, Closed]]
 }, Open  ]]
 }, Open  ]]
 },
@@ -791,10 +1072,18 @@ StyleDefinitions->"Default.nb"
 
 (* Internal cache information *)
 (*CellTagsOutline
-CellTagsIndex->{}
+CellTagsIndex->{
+ "Info3648821895-6722051"->{
+  Cell[28102, 806, 126, 2, 40, "Print",
+   CellTags->"Info3648821895-6722051"],
+  Cell[28231, 810, 9635, 248, 586, "Print",
+   CellTags->"Info3648821895-6722051"]}
+ }
 *)
 (*CellTagsIndex
-CellTagsIndex->{}
+CellTagsIndex->{
+ {"Info3648821895-6722051", 38246, 1075}
+ }
 *)
 (*NotebookFileOutline
 Notebook[{
@@ -802,101 +1091,112 @@ Cell[CellGroupData[{
 Cell[580, 22, 105, 1, 92, "Title"],
 Cell[688, 25, 468, 7, 49, "Text"],
 Cell[1159, 34, 447, 10, 106, "Text"],
-Cell[1609, 46, 303, 7, 68, "Text"],
+Cell[1609, 46, 537, 11, 87, "Text"],
 Cell[CellGroupData[{
-Cell[1937, 57, 203, 3, 65, "Chapter"],
+Cell[2171, 61, 203, 3, 65, "Chapter"],
 Cell[CellGroupData[{
-Cell[2165, 64, 144, 2, 28, "Input"],
-Cell[2312, 68, 104, 1, 28, "Output"]
+Cell[2399, 68, 144, 2, 28, "Input"],
+Cell[2546, 72, 104, 1, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2453, 74, 183, 3, 28, "Input"],
-Cell[2639, 79, 509, 11, 24, "Message"],
-Cell[3151, 92, 96, 1, 28, "Output"]
+Cell[2687, 78, 183, 3, 28, "Input"],
+Cell[2873, 83, 509, 11, 24, "Message"],
+Cell[3385, 96, 96, 1, 28, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3296, 99, 184, 2, 65, "Chapter"],
-Cell[3483, 103, 101, 1, 30, "Text"],
+Cell[3530, 103, 184, 2, 65, "Chapter"],
+Cell[3717, 107, 101, 1, 30, "Text"],
 Cell[CellGroupData[{
-Cell[3609, 108, 848, 22, 114, "Input"],
-Cell[4460, 132, 823, 21, 46, "Output"]
+Cell[3843, 112, 848, 22, 114, "Input"],
+Cell[4694, 136, 823, 21, 46, "Output"]
 }, Open  ]],
-Cell[5298, 156, 408, 11, 28, "Input"],
-Cell[5709, 169, 158, 2, 30, "Text"],
+Cell[5532, 160, 408, 11, 28, "Input"],
+Cell[5943, 173, 158, 2, 30, "Text"],
 Cell[CellGroupData[{
-Cell[5892, 175, 390, 9, 28, "Input"],
-Cell[6285, 186, 1881, 39, 131, "Output"]
+Cell[6126, 179, 390, 9, 28, "Input"],
+Cell[6519, 190, 1881, 39, 131, "Output"]
 }, Open  ]],
-Cell[8181, 228, 205, 2, 30, "Text"],
+Cell[8415, 232, 205, 2, 30, "Text"],
 Cell[CellGroupData[{
-Cell[8411, 234, 251, 5, 28, "Input"],
-Cell[8665, 241, 159, 2, 28, "Output"]
+Cell[8645, 238, 251, 5, 28, "Input"],
+Cell[8899, 245, 159, 2, 28, "Output"]
 }, Open  ]],
-Cell[8839, 246, 88, 1, 30, "Text"],
+Cell[9073, 250, 88, 1, 30, "Text"],
 Cell[CellGroupData[{
-Cell[8952, 251, 428, 7, 28, "Input"],
-Cell[9383, 260, 147, 3, 28, "Output"]
+Cell[9186, 255, 428, 7, 28, "Input"],
+Cell[9617, 264, 147, 3, 28, "Output"]
 }, Open  ]],
-Cell[9545, 266, 167, 2, 30, "Text"],
+Cell[9779, 270, 167, 2, 30, "Text"],
 Cell[CellGroupData[{
-Cell[9737, 272, 548, 15, 28, "Input"],
-Cell[10288, 289, 847, 23, 115, "Output"]
+Cell[9971, 276, 548, 15, 28, "Input"],
+Cell[10522, 293, 847, 23, 115, "Output"]
 }, Open  ]],
-Cell[11150, 315, 184, 3, 30, "Text"],
-Cell[11337, 320, 282, 4, 30, "Text"],
+Cell[11384, 319, 184, 3, 30, "Text"],
+Cell[11571, 324, 282, 4, 30, "Text"],
 Cell[CellGroupData[{
-Cell[11644, 328, 362, 11, 28, "Input"],
-Cell[12009, 341, 547, 16, 28, "Output"]
+Cell[11878, 332, 362, 11, 28, "Input"],
+Cell[12243, 345, 547, 16, 28, "Output"]
 }, Open  ]],
-Cell[12571, 360, 293, 4, 30, "Text"],
+Cell[12805, 364, 293, 4, 30, "Text"],
 Cell[CellGroupData[{
-Cell[12889, 368, 535, 12, 28, "Input"],
-Cell[13427, 382, 1740, 50, 114, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[15204, 437, 365, 9, 28, "Input"],
-Cell[15572, 448, 1923, 58, 114, "Output"]
-}, Open  ]],
-Cell[17510, 509, 209, 3, 30, "Text"],
-Cell[CellGroupData[{
-Cell[17744, 516, 298, 8, 28, "Input"],
-Cell[18045, 526, 1200, 21, 385, "Output"]
-}, Open  ]],
-Cell[19260, 550, 403, 5, 30, "Text"],
-Cell[CellGroupData[{
-Cell[19688, 559, 1339, 35, 148, "Input"],
-Cell[21030, 596, 957, 24, 131, "Output"]
-}, Open  ]],
-Cell[22002, 623, 132, 1, 30, "Text"],
-Cell[22137, 626, 100, 1, 30, "Text"],
-Cell[CellGroupData[{
-Cell[22262, 631, 193, 4, 28, "Input"],
-Cell[22458, 637, 168, 4, 28, "Output"]
-}, Open  ]],
-Cell[22641, 644, 128, 1, 30, "Text"],
-Cell[22772, 647, 301, 4, 30, "Text"],
-Cell[CellGroupData[{
-Cell[23098, 655, 233, 7, 28, "Input"],
-Cell[23334, 664, 700, 18, 47, "Output"]
+Cell[13123, 372, 535, 12, 28, "Input"],
+Cell[13661, 386, 1740, 50, 114, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[24071, 687, 587, 13, 31, "Input"],
-Cell[24661, 702, 300, 8, 28, "Output"]
+Cell[15438, 441, 365, 9, 28, "Input"],
+Cell[15806, 452, 1923, 58, 114, "Output"]
 }, Open  ]],
-Cell[24976, 713, 311, 6, 49, "Text"],
-Cell[25290, 721, 199, 4, 28, "Input"],
+Cell[17744, 513, 209, 3, 30, "Text"],
 Cell[CellGroupData[{
-Cell[25514, 729, 216, 4, 28, "Input"],
-Cell[25733, 735, 917, 24, 46, "Output"]
+Cell[17978, 520, 298, 8, 28, "Input"],
+Cell[18279, 530, 1200, 21, 385, "Output"]
+}, Open  ]],
+Cell[19494, 554, 403, 5, 30, "Text"],
+Cell[CellGroupData[{
+Cell[19922, 563, 1339, 35, 148, "Input"],
+Cell[21264, 600, 957, 24, 131, "Output"]
+}, Open  ]],
+Cell[22236, 627, 132, 1, 30, "Text"],
+Cell[22371, 630, 100, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[22496, 635, 193, 4, 28, "Input"],
+Cell[22692, 641, 168, 4, 28, "Output"]
+}, Open  ]],
+Cell[22875, 648, 128, 1, 30, "Text"],
+Cell[23006, 651, 301, 4, 30, "Text"],
+Cell[CellGroupData[{
+Cell[23332, 659, 233, 7, 28, "Input"],
+Cell[23568, 668, 700, 18, 47, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[26687, 764, 125, 2, 28, "Input"],
-Cell[26815, 768, 73, 1, 28, "Output"]
+Cell[24305, 691, 587, 13, 31, "Input"],
+Cell[24895, 706, 300, 8, 28, "Output"]
 }, Open  ]],
-Cell[26903, 772, 98, 1, 30, "Text"],
-Cell[27004, 775, 135, 1, 30, "Text"],
-Cell[27142, 778, 99, 1, 30, "Text"]
+Cell[25210, 717, 311, 6, 49, "Text"],
+Cell[25524, 725, 199, 4, 28, "Input"],
+Cell[CellGroupData[{
+Cell[25748, 733, 216, 4, 28, "Input"],
+Cell[25967, 739, 917, 24, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26921, 768, 125, 2, 28, "Input"],
+Cell[27049, 772, 73, 1, 28, "Output"]
+}, Open  ]],
+Cell[27137, 776, 98, 1, 30, "Text"],
+Cell[27238, 779, 135, 1, 30, "Text"],
+Cell[27376, 782, 99, 1, 30, "Text"],
+Cell[27478, 785, 197, 4, 49, "Text"],
+Cell[27678, 791, 255, 5, 28, "Input"],
+Cell[CellGroupData[{
+Cell[27958, 800, 119, 2, 28, "Input"],
+Cell[CellGroupData[{
+Cell[28102, 806, 126, 2, 40, "Print",
+ CellTags->"Info3648821895-6722051"],
+Cell[28231, 810, 9635, 248, 586, "Print",
+ CellTags->"Info3648821895-6722051"]
+}, Open  ]]
+}, Closed]]
 }, Open  ]]
 }, Open  ]]
 }
